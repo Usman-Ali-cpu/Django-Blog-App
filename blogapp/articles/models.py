@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 
-class Articles(models.Model):
+class Article(models.Model):
     """
     Articles Model
     """
@@ -13,3 +13,5 @@ class Articles(models.Model):
 
     def __str__(self):
         return self.title
+    
+    
