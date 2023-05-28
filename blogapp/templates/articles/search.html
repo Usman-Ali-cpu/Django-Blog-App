@@ -1,0 +1,10 @@
+{% extends 'base.html'  %}
+
+{% block content %}
+
+
+<h1>Article Search  Page</h1>
+    {%if object%}
+        <p> ID: {{object.id}} - {{object.title}} </p>
+    {%endif%}
+{% endblock content %}
