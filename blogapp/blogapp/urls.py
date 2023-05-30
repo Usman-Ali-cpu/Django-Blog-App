@@ -29,4 +29,5 @@ urlpatterns = [
     path('articles/create', article_create_view),
     path('articles/<int:id>/', article_detail_view),
     path('', home_view),
+    # add urls for articles app
 ]
