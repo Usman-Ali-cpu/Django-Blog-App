@@ -1,11 +1,13 @@
-{% extends 'base.html' %}
-
 
 {% block content %}
+{% if not request.user.is_authenticated %}
     <h1> Login Page </h1>
     <div style="margin-top:30px">
         <form action="" method="post">
-            {%csrf_token %}
+            {% csrf_token %} 
+            {%if error %}
+                <p style="color: red"> {{error}} </p>
+            {%endif%}
             <div>
                 <input type="text" name="username" placeholder="Username" required>
             </div>
@@ -15,4 +17,9 @@
             <button type="submit"> Login </button>
         </form>
     </div>
+{% else %}
+    <h1> You are already logged in </h1>
+    <a href="/logout"> Logout </a>
+{% endif %}
+
 {% endblock %}
