@@ -9,12 +9,6 @@ from django.template.loader import render_to_string
 
 from articles.models import Article
 
-
-
-
-
-
-
 def home_view(request, *args, **kwargs):
     """
     it takes request as input and returns the HTML as a response
@@ -39,26 +33,3 @@ def home_view(request, *args, **kwargs):
     HTML_STRING = render_to_string("home-view.html", context=context)
     return HttpResponse(HTML_STRING)
 
-
-def login_view(request):
-    """
-    it takes request as input and returns the HTML as a response
-    """
-    if request.method == "POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-        print(username, password)
-    return render(request, "accounts/login.html", {})
-
-
-def logout_view(request):
-    """
-    it takes request as input and returns the HTML as a response
-    """
-    return render(request, "accounts/logout.html", {})
-
-def register_view(request):
-    """
-    it takes request as input and returns the HTML as a response
-    """
-    return render(request, "accounts/register.html", {})
